@@ -148,7 +148,7 @@ const Filter = () => {
                                 <thead className="green text-white font-bold poppins-2">
                                     <tr>
                                         <th className="admin_panel_th admin_panel-tih py-5 px-2 poppins-2">№</th>
-                                        <th className="admin_panel_th py-4 px-2 poppins-2">Ism</th>
+                                        <th className="admin_panel_th py-4 px-2 poppins-2">Ism</th>fasd
                                         <th className="admin_panel_th py-4 px-2 poppins-2">Telefon raqami</th>
                                         <th className="admin_panel_th py-4 px-2 poppins-2">Maktab</th>
                                         <th className="admin_panel_th py-4 px-2 poppins-2">Sinf</th>
