@@ -5,7 +5,6 @@ import { BsChevronDown, BsChevronUp } from "react-icons/bs"
 import Link from "next/link"
 import Navbar from '../../../components/Navbar';
 import RemoveBtn from '../../../components/RemoveBtn';
-import { HiPencilAlt } from "react-icons/hi";
 
 const getTopics = async () => {
     try {
@@ -69,7 +68,8 @@ const Filter = () => {
             t.newIsm.toLowerCase().includes(filterValue.newIsm.toLowerCase()) &&
             t.newSinfi.toLowerCase().includes(filterValue.newSinfi.toLowerCase()) &&
             t.school.toLowerCase().includes(filterValue.school.toLowerCase()) &&
-            t.MFY === "2-sektor" // Filter by MFY equal to "CHORTOQ"
+            t.MFY === "2-sektor" && // Filter by MFY equal to "CHORTOQ"
+            new Date(t.createdAt).toLocaleDateString().includes(filterValue.date) // Check for the entered date
         );
         setFilteredMavzula(filteredArray);
     };
@@ -95,13 +95,12 @@ const Filter = () => {
                         {/* <Link href={"/newPupils"}>Bugungi kiritilgan o`quvchilar</Link> */}
                         <div className='flex gap-3 items-center katta_main_div_edi'>
                             <div onClick={handleHide} className='main_div_edi  cursor-pointer flex items-center gap-5 font-bold'>
-                                <h1 className='poppins text-2xl'>Filtrlash:</h1>
                                 {hide ? (
-                                    <div className='w-[100px] border-2 py-2.5 flex items-center justify-center rounded-md'>
-                                        <BsChevronUp fontSize={25} /></div>
+                                    <div className='w-8 border-2 py-2.5 flex items-center justify-center rounded-md'>
+                                        <BsChevronUp fontSize={15} /></div>
                                 ) : (
-                                    <div className='w-[100px] border-2 py-2.5 flex items-center justify-center rounded-md'>
-                                        < BsChevronDown fontSize={25} />
+                                    <div className='w-8 border-2 py-2.5 flex items-center justify-center rounded-md'>
+                                        < BsChevronDown fontSize={15} />
                                     </div>
                                 )}
                             </div>
@@ -129,6 +128,11 @@ const Filter = () => {
                                     <input className='border-2 py-[11px] px-2 w-full' placeholder='Maktab raqamini yozing' type="text" value={filterValue.school} onChange={(e) => setFilterValue({ ...filterValue, school: e.target.value })} />
                                     <button className='green text-white py-3 px-10 button ' onClick={handleFilter}>Izlash</button>
                                 </div>
+                                <div className='flex items-center gap-3 mb-3'>
+                                    <input className='border-2 py-[11px] px-2 w-full' placeholder='Sana kiriting (kun,oy,yil)' type="text" value={filterValue.date} onChange={(e) => setFilterValue({ ...filterValue, date: e.target.value })} />
+                                    <button className='green text-white py-3 px-10 button' onClick={handleFilter}>Izlash</button>
+                                </div>
+
                             </div>
 
                         </div>
@@ -137,7 +141,7 @@ const Filter = () => {
 
                 </div>
                 <div className="mb-4">
-                    {Object.keys(usersAddedByDate).map((date) => (
+                    {Object.keys(usersAddedByDate).reverse().map((date) => (
                         <div key={date}>
                             <h3 className='text-2xl font-bold poppins mb-5 mt-10'>{date} sanasida kiritilgan o`quvchilar:</h3>
                             <table className="main_table w-full shadow-xl">
