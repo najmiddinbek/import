@@ -78,14 +78,31 @@ const PupilsAddClient = () => {
                 <select
                     onChange={(e) => setSinfi(e.target.value)}
                     value={sinf}
-                    className="px-2 py-3 cursor-pointer"
-                >
+                    className="px-2 py-3 cursor-pointer">
                     <option>Bu yerdan tanlang</option>
-                    {sinflar.map((sinf) => (
-                        <option key={sinf} value={sinf}>
-                            {sinf}-sinf
-                        </option>
-                    ))}
+                    <option>Bu yerdan tanlang</option>
+                    <option>5-A</option>
+                    <option>5-B</option>
+                    <option>5-D</option>
+                    <option>6-A</option>
+                    <option>6-B</option>
+                    <option>6-D</option>
+                    <option>7-A</option>
+                    <option>7-B</option>
+                    <option>7-D</option>
+                    <option>8-A</option>
+                    <option>8-B</option>
+                    <option>8-D</option>
+                    <option>8-E</option>
+                    <option>9-A</option>
+                    <option>9-B</option>
+                    <option>9-D</option>
+                    <option>10-A</option>
+                    <option>10-B</option>
+                    <option>10-D</option>
+                    <option>11-A</option>
+                    <option>11-B</option>
+                    <option>11-D</option>
                 </select>
                 <label className="text-[18px] poppins font-bold" htmlFor="">
                     Familiya,Ismi hamda Otasining ismi
