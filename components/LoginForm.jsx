@@ -279,7 +279,7 @@ export default function LoginForm() {
       });
       return;
     }
-    if (email === "Jo`rayeva Nargiza" && password === "nargizajorayeva18") {
+    if (email === "Nargiza" && password === "nargiza18") {
       router.replace("/pupilsAdd");
       toast.success(`Xush kelibsiz ${email}`, {
         position: "top-right",
@@ -532,7 +532,7 @@ export default function LoginForm() {
       });
       return;
     }
-    if (email === "Xamrayev Sohibboy" && password === "sohibboy79") {
+    if (email === "Sohibboy" && password === "sohibboy68") {
       router.replace("/pupilsAdd");
       toast.success(`Xush kelibsiz ${email}`, {
         position: "top-right",
